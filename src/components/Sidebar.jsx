@@ -13,14 +13,15 @@ import {
   MdSupportAgent,
   MdCampaign,
 } from "react-icons/md";
+import { FiHome } from "react-icons/fi";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Summary', icon: <MdOutlineSummarize size={24} />, to: '/dashboard' },
+    { name: 'Dashboard', icon: <FiHome size={24} />, to: '/dashboard' },
     { name: 'Messages', icon: <MdOutlineMessage size={24} />, to: '#' },
-    { name: 'Customers', icon: <MdPeople size={24} />, to: '/activity' },
+    { name: 'AllUser', icon: <MdPeople size={24} />, to: '/alluser' },
     { name: 'Wallet', icon: <MdAccountBalanceWallet size={24} />, to: '/wallet' },
     { name: 'Settings', icon: <MdSettings size={24} />, to: '/#' },
     { name: 'Advertisements', icon: <MdCampaign size={24} />, to: '/ads' },
@@ -53,7 +54,7 @@ const Sidebar = () => {
               <MdDashboard size={30} className="text-white" />
             </div>
             <div className="text-center">
-              <h1 className="text-2xl font-bold text-white">Dashboard</h1>
+              <h1 className="text-2xl font-bold text-white">Affiliate</h1>
               <p className="text-sm text-blue-200 mt-1">Administrator Panel</p>
             </div>
           </NavLink>

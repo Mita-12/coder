@@ -135,77 +135,100 @@ const HeroSection = () => {
           </div>
 
           {/* Strategy Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "💻",
-                title: "Share in Dev Communities",
-                desc: "Post about Coder in forums like Dev.to, Reddit, or Stack Overflow.",
-                color: "from-emerald-400 to-emerald-600"
-              },
-              {
-                icon: "📝",
-                title: "Write Technical Articles",
-                desc: "Create tutorials or comparisons featuring Coder on your blog.",
-                color: "from-slate-400 to-slate-600"
-              },
-              {
-                icon: "📱",
-                title: "Social Media Posts",
-                desc: "Tweet about your Coder experiences or share on LinkedIn.",
-                color: "from-cyan-400 to-cyan-600"
-              },
-              {
-                icon: "🎥",
-                title: "Create Video Content",
-                desc: "Make YouTube tutorials or live coding sessions using Coder.",
-                color: "from-rose-500 to-rose-700"
-              },
-              {
-                icon: "👨‍💻",
-                title: "Recommend to Colleagues",
-                desc: "Share with your workplace or coding bootcamp students.",
-                color: "from-amber-400 to-amber-600"
-              },
-              {
-                icon: "📊",
-                title: "Add to Resource Lists",
-                desc: "Include Coder in your curated lists of developer tools.",
-                color: "from-indigo-400 to-indigo-600"
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="relative group bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 overflow-hidden"
-              >
-                {/* Gradient accent */}
-                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${item.color}`}></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {[
+    {
+      icon: "💻",
+      title: "Dev Community Sharing",
+      desc: "Post about Coder in forums like Dev.to, Reddit, or Stack Overflow.",
+      color: "from-emerald-400 to-emerald-600"
+    },
+    {
+      icon: "✉️",
+      title: "Email Marketing",
+      desc: "Include Coder in your newsletter campaigns and product updates.",
+      color: "from-purple-400 to-purple-600"
+    },
+    {
+      icon: "📝",
+      title: "Technical Blogging",
+      desc: "Create tutorials or comparisons featuring Coder on your blog.",
+      color: "from-slate-400 to-slate-600"
+    },
+    {
+      icon: "📧",
+      title: "Blog Email Marketing",
+      desc: "Promote your Coder content through targeted email campaigns.",
+      color: "from-fuchsia-400 to-fuchsia-600"
+    },
+    {
+      icon: "🔍",
+      title: "Google Ads Campaign",
+      desc: "Run targeted search ads for developers looking for coding tools.",
+      color: "from-blue-400 to-blue-600"
+    },
+    {
+      icon: "📱",
+      title: "Social Media Ads",
+      desc: "Boost posts about Coder on Meta platforms (Facebook/Instagram).",
+      color: "from-cyan-400 to-cyan-600"
+    },
+    {
+      icon: "🔗",
+      title: "Strategic Link Sharing",
+      desc: "Share Coder links in relevant online communities and groups.",
+      color: "from-violet-400 to-violet-600"
+    },
+    {
+      icon: "🗣️",
+      title: "Word-of-Mouth Marketing",
+      desc: "Recommend Coder in conversations at meetups and conferences.",
+      color: "from-amber-400 to-amber-600"
+    },
+    {
+      icon: "🎥",
+      title: "YouTube Content",
+      desc: "Create video tutorials and share across social platforms.",
+      color: "from-rose-500 to-rose-700"
+    }
+  ].map((item, idx) => (
+    <div
+      key={idx}
+      className="relative group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100 overflow-hidden"
+    >
+      {/* Gradient accent bar */}
+      <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${item.color}`}></div>
+      
+      <div className="flex items-start gap-5">
+        {/* 3D effect icon container */}
+        <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${item.color} text-white text-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform`}>
+          {item.icon}
+        </div>
 
-                <div className="flex items-start gap-6">
-                  {/* Gradient icon circle */}
-                  <div className={`flex-shrink-0 w-14 h-14 rounded-full bg-gradient-to-br ${item.color} text-white text-2xl flex items-center justify-center shadow-md`}>
-                    {item.icon}
-                  </div>
+        <div className="flex-1">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2 group-hover:text-gray-900 transition-colors">
+            {item.title}
+          </h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            {item.desc}
+          </p>
+        </div>
+      </div>
 
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
+      {/* Floating action indicator */}
+      <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center`}>
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </div>
+      </div>
 
-                {/* Hover indicator */}
-                <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* Subtle hover glow */}
+      <div className={`absolute inset-0 rounded-xl opacity-0 group-hover:opacity-10 bg-gradient-to-br ${item.color} transition-opacity duration-300 pointer-events-none`}></div>
+    </div>
+  ))}
+</div>
         </div>
       </div>
 

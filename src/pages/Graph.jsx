@@ -58,56 +58,7 @@ const GraphSection = () => {
               <span>Previous 30 days</span>
             </div>
           </div>
-        </div>        {/* All Members Dropdown Section */}
-        {/* <div className="relative inline-block text-left mb-4 ">
-          <div>
-            <button
-              type="button"
-              onClick={() => setShowDropdown(!showDropdown)}
-              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
-            >
-              All Members
-              <svg
-                className="-mr-1 ml-2 h-5 w-5"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.584l3.71-4.354a.75.75 0 111.14.976l-4.25 5a.75.75 0 01-1.14 0l-4.25-5a.75.75 0 01.02-1.06z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-          </div>
-
-          {showDropdown && (
-            <div className="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-20">
-              <div className="py-1">
-                <a
-                  href="/instructor-dashboard"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Instructor       </a>
-                <Link
-                  to="/students-dashboard"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Student
-                </Link>
-                <a
-                  href="#"
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                >
-                  Collage
-                </a>
-              </div>
-            </div>
-          )}
-        </div> */}
-
+        </div>       
         <div className="flex items-center gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Last 30day</label>

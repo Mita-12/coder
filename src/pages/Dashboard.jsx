@@ -168,7 +168,7 @@ const Dashboard = () => {
                 {/* Conversion Rate Card */}
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-gray-800 font-medium">Conversion Rate</span>
+                    <span className="text-gray-800 font-medium">Total add spend</span>
                     <div className="p-2 rounded-lg bg-yellow-200">
                       <FaFilterCircleDollar className="text-yellow-500 text-xl" />
                     </div>
@@ -248,7 +248,7 @@ const Dashboard = () => {
                 {/* Earnings Per Click Card */}
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-gray-800 font-medium">Earnings Per Click</span>
+                    <span className="text-gray-800 font-medium">Total add campaign </span>
                     <div className="p-2 rounded-lg bg-blue-200">
                       <PiMoneyDuotone className="text-blue-600 text-xl" />
                     </div>
@@ -387,11 +387,11 @@ const Dashboard = () => {
               <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group">
 
                 {/* Premium Ribbon */}
-                <div className="absolute top-0 right-4 z-10">
+                {/* <div className="absolute top-0 right-4 z-10">
                   <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-b-lg shadow-sm">
                     EXCLUSIVE
                   </div>
-                </div>
+                </div> */}
 
                 {/* Subscription Image */}
                 <div className="h-32 bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center relative overflow-hidden">
@@ -481,6 +481,134 @@ const Dashboard = () => {
                 </div>
               </div>
 
+              {/*3rd offer*/}
+
+              <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group relative">
+
+                {/* Time-sensitive Badge */}
+                <div className="absolute top-3 right-3 z-10">
+                  <span className="inline-flex items-center text-xs font-medium text-white bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1 rounded-full shadow-sm">
+                    <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Limited Time
+                  </span>
+                </div>
+
+                {/* Ad Promotion Image */}
+                <div className="h-32 bg-gradient-to-r from-pink-100 to-rose-100 flex items-center justify-center relative overflow-hidden">
+                  <img
+                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                    alt="Ad Promotion"
+                    className="absolute inset-0 w-full h-full object-cover opacity-40"
+                  />
+                  <div className="relative z-10 text-center px-4">
+                    <div className="inline-flex items-center bg-white/90 text-pink-600 px-4 py-2 rounded-full shadow-xs mb-2">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      <span className="text-sm font-semibold">Premium Visibility</span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800">Homepage Feature + Domain Offer</h3>
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-5">
+                  <div className="flex items-start gap-4">
+                    {/* Icon */}
+                    <div className="bg-pink-100 text-pink-600 p-3 rounded-lg flex-shrink-0">
+                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                      </svg>
+                    </div>
+
+                    <div className="flex-1">
+                      <h4 className="text-lg font-bold text-gray-900">Premium Ad Placement + Free Domain</h4>
+                      <p className="text-sm text-gray-600 mt-1">Get 10x more visibility plus a free domain for 1 year</p>
+
+                      {/* Benefits List */}
+                      <ul className="mt-3 space-y-2">
+                        <li className="flex items-start">
+                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-700">Featured in our homepage carousel</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-700">Free domain registration (.com) for 1 year</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-700">Priority placement above organic content</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-700">Detailed analytics dashboard</span>
+                        </li>
+                        <li className="flex items-start">
+                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-700">Free SSL certificate with domain</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Domain Offer Banner */}
+                  <div className="mt-4 bg-blue-50 border border-blue-100 rounded-lg p-3 flex items-start">
+                    <div className="bg-blue-100 text-blue-600 p-2 rounded-lg mr-3">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h5 className="font-bold text-blue-800">Special Domain Offer Included</h5>
+                      <p className="text-sm text-blue-600">Get a free .com domain (normally $12.99/year) when you purchase this promotion</p>
+                    </div>
+                  </div>
+
+                  {/* Stats and CTA */}
+                  <div className="mt-5">
+                    <div className="grid grid-cols-3 gap-2 text-center mb-4">
+                      <div className="bg-pink-50 p-2 rounded-lg">
+                        <p className="text-xs text-gray-500">Avg. Views</p>
+                        <p className="font-bold text-pink-600">25K+</p>
+                      </div>
+                      <div className="bg-pink-50 p-2 rounded-lg">
+                        <p className="text-xs text-gray-500">Click Rate</p>
+                        <p className="font-bold text-pink-600">8.2%</p>
+                      </div>
+                      <div className="bg-pink-50 p-2 rounded-lg">
+                        <p className="text-xs text-gray-500">Duration</p>
+                        <p className="font-bold text-pink-600">7 Days</p>
+                      </div>
+                    </div>
+
+                    <button className="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-medium py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center">
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                      Get Premium Placement + Free Domain
+                    </button>
+                  </div>
+
+                  {/* Disclaimer */}
+                  <div className="mt-3 text-center">
+                    <p className="text-xs text-gray-400">Spots limited. Domain offer requires 1-year commitment.</p>
+                  </div>
+                </div>
+              </div>
 
               {/* Offer Card 3 - Not Earned */}
               <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group relative">
@@ -584,7 +712,6 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-
 
             </div>
           </div>

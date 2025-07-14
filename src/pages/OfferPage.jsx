@@ -219,9 +219,7 @@ const OfferPage = () => {
             <button className="bg-white hover:bg-blue-100 text-blue-800 px-8 py-4 rounded-xl font-semibold text-lg transition-colors">
               Get Started Now
             </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white/10 px-8 py-4 rounded-xl font-semibold text-lg transition-colors">
-              Contact Sales
-            </button>
+           
           </div>
         </div>
       </div>
