@@ -1,0 +1,16 @@
+@import "tailwindcss";
+.first-color { 
+	background: #081f37; 
+}
+	
+.second-color { 
+	background: #5fc9f3; 
+}
+
+.third-color { 
+	background: #2e79ba; 
+}
+
+.fourth-color { 
+	background: #1e549f; 
+}
