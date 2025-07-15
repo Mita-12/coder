@@ -15,7 +15,7 @@ import AllUsers from './pages/AllUser';
 function MainContent() {
   const location = useLocation();
 
-  const noFooterPaths = ['/signup', '/login', '/dashboard','/setting','/wallet','/profile','/activity','/alluser'];
+  const noFooterPaths = ['/signup', '/login', '/dashboard', '/setting', '/wallet', '/profile', '/activity', '/alluser'];
   const shouldShowFooter =
     !noFooterPaths.includes(location.pathname) && location.pathname !== '*';
 
@@ -31,8 +31,8 @@ function MainContent() {
         <Route path="/setting" element={<SettingsPage />} />
         <Route path="/wallet" element={<WalletPage />} />
         <Route path="/profile" element={<Profile />} />
-                <Route path="/activity" element={<Activity />} />
-                                <Route path="/alluser" element={<AllUsers />} />
+        <Route path="/activity" element={<Activity />} />
+        <Route path="/alluser" element={<AllUsers />} />
 
 
 

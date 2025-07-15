@@ -18,7 +18,7 @@ const Navbar = () => {
           <FiCode className="h-8 w-8 text-blue-900 mr-2" />
           <span className="text-2xl md:text-3xl font-extrabold tracking-tight">
             <span className="bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent">
-              Codder Affliate
+            AffliatePartner
             </span>
           </span>
         </div>

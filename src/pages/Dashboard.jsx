@@ -75,10 +75,10 @@ const DashboardNavbar = () => {
                 UpdateProfile
               </Link>
               <div className="border-t border-gray-100"></div>
-              <a href="#" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">
+              <Link to="/home" className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50">
                 <MdLogout className="mr-3 text-gray-500 text-lg" />
-                Log out
-              </a>
+                LogOut
+              </Link>
             </div>
           )}
         </div>
@@ -89,18 +89,16 @@ const DashboardNavbar = () => {
 
 const Dashboard = () => {
   return (
-    <div className="flex w-full bg-slate-100">
+    <div className="flex w-full bg-slate-100 ">
       <Sidebar />
 
       <div className="ml-64 min-h-screen  text-sm text-gray-800 w-full">
         {/* Dashboard Navbar */}
         <DashboardNavbar />
 
-        <div className="mt-16">
-
-          <div className="py-8 px-4 sm:px-6">
+        <div className="mt-16 ">
+          <div className="py-8 px-6 sm:px-6">
             <div className="max-w-7xl mx-auto">
-              {/* Graph Section */}
 
 
               {/* Metrics Grid */}
@@ -274,451 +272,283 @@ const Dashboard = () => {
           </div>
 
           {/* Offers Section */}
-          <div className="p-6 bg-white mr-6 rounded-xl h-1/2">
-            <div className="relative text-center mb-8">
-              {/* Decorative elements */}
-              <div className="absolute -top-3 -left-4 w-8 h-8 bg-yellow-100 rounded-full blur-sm opacity-70"></div>
-              <div className="absolute -bottom-2 -right-4 w-8 h-8 bg-blue-100 rounded-full blur-sm opacity-70"></div>
-
-              {/* Main heading */}
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-800 relative inline-block">
-                <span className="absolute -left-8 -top-2 text-3xl">🎉</span>
-                Current Offers
-                <span className="absolute -right-8 -bottom-2 text-3xl">🎉</span>
-              </h2>
-
-              {/* Subheading */}
-              <p className="mt-2 text-gray-600 max-w-md mx-auto">
-                Limited-time promotions and exclusive deals
-              </p>
-
-              {/* Decorative divider */}
-              <div className="mt-4 flex justify-center">
-                <div className="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full"></div>
+          <div className="w-[70-rem] flex justify-center items-center p-4">
+            <div className="bg-white rounded-3xl overflow-hidden">
+              {/* Header with gradient background */}
+              <div className="bg-gradient-to-r from-blue-600 to-indigo-700 py-12 px-8 text-center">
+                <h2 className="text-4xl font-bold text-white mb-3">Exclusive Developer Offers</h2>
+                <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+                  Limited-time deals crafted specifically for developers like you
+                </p>
               </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 ">
 
-              {/* Offer Card 1 - Earned */}
-              <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 p-0 relative overflow-hidden group">
+              {/* Cards Grid */}
+              <div className="grid md:grid-cols-2 gap-8 p-8">
+                {/* Left Column */}
+                <div className="space-y-8">
+                  {/* Code Components Card */}
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-5">
+                        <div className="flex items-center">
+                          <div className="bg-blue-50 p-3 rounded-xl mr-4">
+                            <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Code Components</h3>
+                            <p className="text-blue-600 text-sm font-medium">React/Vue/Angular</p>
+                          </div>
+                        </div>
+                        <span className="bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
+                      </div>
 
-                {/* Badge - Limited Offer */}
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="inline-flex items-center text-xs font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 px-3 py-1 rounded-full shadow-xs">
-                    <svg className="w-3.5 h-3.5 mr-1.5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
-                    </svg>
-                    Limited Offer
-                  </span>
-                </div>
+                      <p className="text-gray-600 mb-6 text-lg">Production-ready components with full documentation and TypeScript support.</p>
 
-                {/* Template Image */}
-                <div className="h-40 overflow-hidden bg-gray-100 relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                    alt="UI/UX Template"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5">
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="bg-indigo-100 text-indigo-600 p-3 rounded-lg flex-shrink-0 mt-1">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                    </div>
-
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-gray-900">Premium UI/UX Kit</h4>
-                      <p className="text-sm text-gray-600 mt-1">50+ customizable components for modern web apps</p>
-
-                      {/* Features List */}
-                      <ul className="mt-3 space-y-1.5 text-sm text-gray-600">
-                        <li className="flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      <ul className="space-y-3 mb-6">
+                        <li className="flex items-start">
+                          <svg className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          Fully responsive layouts
+                          <span className="text-gray-700">100+ customizable components</span>
                         </li>
-                        <li className="flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <li className="flex items-start">
+                          <svg className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          Dark & light mode
+                          <span className="text-gray-700">TypeScript support included</span>
                         </li>
-                        <li className="flex items-center">
-                          <svg className="w-4 h-4 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        <li className="flex items-start">
+                          <svg className="h-6 w-6 text-blue-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          Figma files included
+                          <span className="text-gray-700">Regular updates and new additions</span>
                         </li>
                       </ul>
+
+                      <div className="bg-blue-50 p-4 rounded-xl mb-6 border border-blue-100">
+                        <div className="flex items-center justify-between">
+                          {/* <div>
+                            <span className="text-sm text-gray-500 line-through">$299/year</span>
+                            <span className="ml-2 text-2xl font-bold text-blue-600">$199/year</span>
+                          </div> */}
+                          <span className="bg-blue-600 text-white text-sm font-medium px-3 py-1 rounded-full">40% OFF</span>
+                        </div>
+                      </div>
+
+                      <button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-6 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+                        Get This Deal
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </button>
                     </div>
                   </div>
 
-                  {/* Price and CTA */}
-                  <div className="mt-5 flex items-center justify-between">
-                    <div>
-                      <span className="text-sm text-gray-500 line-through mr-2">$149</span>
-                      <span className="text-xl font-bold text-indigo-600">$99</span>
-                      <span className="text-xs text-gray-500 ml-1">(one-time)</span>
-                    </div>
-                    <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm">
-                      Get Template
-                    </button>
-                  </div>
+                  {/* Design Systems Card */}
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-5">
+                        <div className="flex items-center">
+                          <div className="bg-indigo-50 p-3 rounded-xl mr-4">
+                            <svg className="w-7 h-7 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Design Systems</h3>
+                            <p className="text-indigo-600 text-sm font-medium">Figma/Sketch</p>
+                          </div>
+                        </div>
+                        <span className="bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">New</span>
+                      </div>
 
-                  {/* Bonus Offer */}
-                  <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-100 flex items-start">
-                    <svg className="w-4 h-4 text-blue-500 mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                    </svg>
-                    <span className="text-xs text-blue-800">Special bonus: Free icon pack ($29 value) included with purchase!</span>
-                  </div>
-                </div>
-              </div>
+                      <p className="text-gray-600 mb-6 text-lg">Complete design systems for consistent UI development.</p>
 
-
-              {/* Offer Card 2 - Earned */}
-              <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group">
-
-                {/* Premium Ribbon */}
-                {/* <div className="absolute top-0 right-4 z-10">
-                  <div className="bg-gradient-to-r from-green-500 to-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-b-lg shadow-sm">
-                    EXCLUSIVE
-                  </div>
-                </div> */}
-
-                {/* Subscription Image */}
-                <div className="h-32 bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center relative overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1604594849809-dfedbc827105?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                    alt="Premium Subscription"
-                    className="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-80"
-                  />
-                  <div className="relative z-10 text-center px-4">
-                    <span className="inline-block text-white bg-green-600/90 px-3 py-1 rounded-full text-xs font-medium mb-2">
-                      LIMITED TIME OFFER
-                    </span>
-                    <h3 className="text-2xl font-bold text-white">30% OFF</h3>
-                    <p className="text-white/90 text-sm mt-1">Pro Plan Subscription</p>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5">
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="bg-green-100 text-green-600 p-3 rounded-lg flex-shrink-0">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                      </svg>
-                    </div>
-
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-gray-900">Premium Pro Plan</h4>
-                      <p className="text-sm text-gray-600 mt-1">Unlock all features with our best value plan</p>
-
-                      {/* Benefits List */}
-                      <ul className="mt-3 space-y-2">
+                      <ul className="space-y-3 mb-6">
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-indigo-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">All premium templates and components</span>
+                          <span className="text-gray-700">Dark/light mode support</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-indigo-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Priority customer support</span>
+                          <span className="text-gray-700">Auto-layout components</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-green-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-indigo-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Exclusive member-only content</span>
+                          <span className="text-gray-700">Design tokens included</span>
                         </li>
                       </ul>
-                    </div>
-                  </div>
 
-                  {/* Price Comparison */}
-                  <div className="mt-5 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <p className="text-xs text-gray-500">Regular Price</p>
-                        <p className="text-gray-400 line-through">$299/year</p>
+                      <div className="bg-indigo-50 p-4 rounded-xl mb-6 border border-indigo-100">
+                        <div className="flex items-center justify-between">
+                          {/* <div>
+                            <span className="text-sm text-gray-500 line-through">$149</span>
+                            <span className="ml-2 text-2xl font-bold text-indigo-600">$99</span>
+                            <span className="ml-2 text-sm text-gray-500">one-time</span>
+                          </div> */}
+                          <span className="bg-indigo-600 text-white text-sm font-medium px-3 py-1 rounded-full">33% OFF</span>
+                        </div>
                       </div>
-                      <svg className="w-5 h-5 text-gray-400 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                      <div className="text-right">
-                        <p className="text-xs text-green-600 font-medium">Discount Price</p>
-                        <p className="text-green-600 font-bold">$209/year</p>
+
+                      <button className="w-full bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-700 hover:to-indigo-600 text-white px-6 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+                        Get This Deal
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column */}
+                <div className="space-y-8">
+
+
+                  {/* Premium Domains Card */}
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-5">
+                        <div className="flex items-center">
+                          <div className="bg-amber-50 p-3 rounded-xl mr-4">
+                            <svg className="w-7 h-7 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Premium Domains</h3>
+                            <p className="text-amber-600 text-sm font-medium">.com & .dev</p>
+                          </div>
+                        </div>
+                        <span className="bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full">Exclusive</span>
                       </div>
-                    </div>
-                    <div className="mt-2 text-center">
-                      <span className="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
-                        You save $90 (30%)
-                      </span>
-                    </div>
-                  </div>
 
-                  {/* CTA Button */}
-                  <button className="mt-4 w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-medium py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200">
-                    Claim Your Discount Now
-                  </button>
+                      <p className="text-gray-600 mb-6 text-lg">Hand-selected developer domains for your next project.</p>
 
-                  {/* Expiration Notice */}
-                  <div className="mt-3 text-center">
-                    <p className="text-xs text-gray-500">Offer ends in <span className="font-medium text-gray-700">2 days 14 hours</span></p>
-                  </div>
-                </div>
-              </div>
-
-              {/*3rd offer*/}
-
-              <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group relative">
-
-                {/* Time-sensitive Badge */}
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="inline-flex items-center text-xs font-medium text-white bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1 rounded-full shadow-sm">
-                    <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Limited Time
-                  </span>
-                </div>
-
-                {/* Ad Promotion Image */}
-                <div className="h-32 bg-gradient-to-r from-pink-100 to-rose-100 flex items-center justify-center relative overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                    alt="Ad Promotion"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40"
-                  />
-                  <div className="relative z-10 text-center px-4">
-                    <div className="inline-flex items-center bg-white/90 text-pink-600 px-4 py-2 rounded-full shadow-xs mb-2">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      <span className="text-sm font-semibold">Premium Visibility</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800">Homepage Feature + Domain Offer</h3>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5">
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="bg-pink-100 text-pink-600 p-3 rounded-lg flex-shrink-0">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-gray-900">Premium Ad Placement + Free Domain</h4>
-                      <p className="text-sm text-gray-600 mt-1">Get 10x more visibility plus a free domain for 1 year</p>
-
-                      {/* Benefits List */}
-                      <ul className="mt-3 space-y-2">
+                      <ul className="space-y-3 mb-6">
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-amber-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Featured in our homepage carousel</span>
+                          <span className="text-gray-700">Short .com and .dev domains</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-amber-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Free domain registration (.com) for 1 year</span>
+                          <span className="text-gray-700">Tech-related keywords</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-amber-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Priority placement above organic content</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm text-gray-700">Detailed analytics dashboard</span>
-                        </li>
-                        <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span className="text-sm text-gray-700">Free SSL certificate with domain</span>
+                          <span className="text-gray-700">Complete hosting packages</span>
                         </li>
                       </ul>
-                    </div>
-                  </div>
 
-                  {/* Domain Offer Banner */}
-                  <div className="mt-4 bg-blue-50 border border-blue-100 rounded-lg p-3 flex items-start">
-                    <div className="bg-blue-100 text-blue-600 p-2 rounded-lg mr-3">
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-blue-800">Special Domain Offer Included</h5>
-                      <p className="text-sm text-blue-600">Get a free .com domain (normally $12.99/year) when you purchase this promotion</p>
-                    </div>
-                  </div>
-
-                  {/* Stats and CTA */}
-                  <div className="mt-5">
-                    <div className="grid grid-cols-3 gap-2 text-center mb-4">
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Avg. Views</p>
-                        <p className="font-bold text-pink-600">25K+</p>
+                      <div className="bg-amber-50 p-4 rounded-xl mb-6 border border-amber-100">
+                        <div className="flex items-center justify-between">
+                          {/* <div>
+                            <span className="text-sm text-gray-500 line-through">$99/year</span>
+                            <span className="ml-2 text-2xl font-bold text-amber-600">$69/year</span>
+                            <span className="ml-2 text-sm text-gray-500">for first year</span>
+                          </div> */}
+                          <span className="bg-amber-600 text-white text-sm font-medium px-3 py-1 rounded-full">30% OFF</span>
+                        </div>
                       </div>
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Click Rate</p>
-                        <p className="font-bold text-pink-600">8.2%</p>
+
+                      <button className="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-white px-6 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+                        Find Your Domain
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Advertising Network Card */}
+                  <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 transform transition-all hover:shadow-lg hover:-translate-y-1">
+                    <div className="p-6">
+                      <div className="flex justify-between items-start mb-5">
+                        <div className="flex items-center">
+                          <div className="bg-green-50 p-3 rounded-xl mr-4">
+                            <svg className="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900">Advertising Network</h3>
+                            <p className="text-green-600 text-sm font-medium">High RPM</p>
+                          </div>
+                        </div>
+                        <span className="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full">Limited</span>
                       </div>
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Duration</p>
-                        <p className="font-bold text-pink-600">7 Days</p>
-                      </div>
-                    </div>
 
-                    <button className="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-medium py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      Get Premium Placement + Free Domain
-                    </button>
-                  </div>
+                      <p className="text-gray-600 mb-6 text-lg">Premium ads that pay more and match your technical content.</p>
 
-                  {/* Disclaimer */}
-                  <div className="mt-3 text-center">
-                    <p className="text-xs text-gray-400">Spots limited. Domain offer requires 1-year commitment.</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Offer Card 3 - Not Earned */}
-              <div className="bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden group relative">
-
-                {/* Time-sensitive Badge */}
-                <div className="absolute top-3 right-3 z-10">
-                  <span className="inline-flex items-center text-xs font-medium text-white bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1 rounded-full shadow-sm">
-                    <svg className="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Limited Time
-                  </span>
-                </div>
-
-                {/* Ad Promotion Image */}
-                <div className="h-32 bg-gradient-to-r from-pink-100 to-rose-100 flex items-center justify-center relative overflow-hidden">
-                  <img
-                    src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                    alt="Ad Promotion"
-                    className="absolute inset-0 w-full h-full object-cover opacity-40"
-                  />
-                  <div className="relative z-10 text-center px-4">
-                    <div className="inline-flex items-center bg-white/90 text-pink-600 px-4 py-2 rounded-full shadow-xs mb-2">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      <span className="text-sm font-semibold">Premium Visibility</span>
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-800">Homepage Feature</h3>
-                  </div>
-                </div>
-
-                {/* Card Content */}
-                <div className="p-5">
-                  <div className="flex items-start gap-4">
-                    {/* Icon */}
-                    <div className="bg-pink-100 text-pink-600 p-3 rounded-lg flex-shrink-0">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                      </svg>
-                    </div>
-
-                    <div className="flex-1">
-                      <h4 className="text-lg font-bold text-gray-900">Premium Ad Placement</h4>
-                      <p className="text-sm text-gray-600 mt-1">Get 10x more visibility for your product</p>
-
-                      {/* Benefits List */}
-                      <ul className="mt-3 space-y-2">
+                      <ul className="space-y-3 mb-6">
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Featured in our homepage carousel</span>
+                          <span className="text-gray-700">$8-12 average RPM</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Priority placement above organic content</span>
+                          <span className="text-gray-700">Developer-focused advertisers</span>
                         </li>
                         <li className="flex items-start">
-                          <svg className="w-4 h-4 text-pink-500 mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          <svg className="h-6 w-6 text-green-500 mr-3 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                           </svg>
-                          <span className="text-sm text-gray-700">Detailed analytics dashboard</span>
+                          <span className="text-gray-700">Weekly payments via PayPal</span>
                         </li>
                       </ul>
+
+                      <div className="bg-green-50 p-4 rounded-xl mb-6 border border-green-100">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <span className="text-sm text-gray-500">First month</span>
+                            <span className="ml-2 text-2xl font-bold text-green-600">+20% earnings</span>
+                          </div>
+                          <span className="bg-green-600 text-white text-sm font-medium px-3 py-1 rounded-full">BONUS</span>
+                        </div>
+                      </div>
+
+                      <button className="w-full bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white px-6 py-4 rounded-xl font-semibold text-lg transition-all flex items-center justify-center shadow-md hover:shadow-lg">
+                        Join Now
+                        <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                      </button>
                     </div>
-                  </div>
-
-                  {/* Stats and CTA */}
-                  <div className="mt-5">
-                    <div className="grid grid-cols-3 gap-2 text-center mb-4">
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Avg. Views</p>
-                        <p className="font-bold text-pink-600">25K+</p>
-                      </div>
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Click Rate</p>
-                        <p className="font-bold text-pink-600">8.2%</p>
-                      </div>
-                      <div className="bg-pink-50 p-2 rounded-lg">
-                        <p className="text-xs text-gray-500">Duration</p>
-                        <p className="font-bold text-pink-600">7 Days</p>
-                      </div>
-                    </div>
-
-                    <button className="w-full bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white font-medium py-2.5 px-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 flex items-center justify-center">
-                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                      </svg>
-                      Promote My Product Now
-                    </button>
-                  </div>
-
-                  {/* Disclaimer */}
-                  <div className="mt-3 text-center">
-                    <p className="text-xs text-gray-400">Spots limited. Approval required.</p>
                   </div>
                 </div>
               </div>
 
+              {/* Footer with countdown */}
+              {/* <div className="bg-gray-50 border-t border-gray-200 py-6 px-8 text-center">
+      <div className="inline-flex items-center bg-white shadow-sm px-6 py-3 rounded-full border border-gray-200">
+        <svg className="w-6 h-6 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span className="font-medium text-gray-800">Offer ends in: <span className="text-red-600">2 days 14 hours 23 minutes</span></span>
+      </div>
+    </div> */}
             </div>
           </div>
 
-
           {/* Referral Link */}
-          <div className="bg-white rounded-xl p-6 mb-6 shadow-sm hover:shadow-md mr-6 mt-6 transition-all">
+          <div className="bg-white rounded-xl p-6 mb-6 shadow-sm hover:shadow-md mr-6 mt-6 transition-all pr-6">
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-semibold text-lg">Your Referral Network</h3>
 

@@ -20,7 +20,7 @@ const Sidebar = () => {
 
   const menuItems = [
     { name: 'Dashboard', icon: <FiHome size={24} />, to: '/dashboard' },
-    { name: 'Messages', icon: <MdOutlineMessage size={24} />, to: '#' },
+   
     { name: 'AllUser', icon: <MdPeople size={24} />, to: '/alluser' },
     { name: 'Wallet', icon: <MdAccountBalanceWallet size={24} />, to: '/wallet' },
     { name: 'Settings', icon: <MdSettings size={24} />, to: '/#' },
