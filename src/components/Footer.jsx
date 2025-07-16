@@ -13,7 +13,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const Footer = () => {
     return (
-        <footer className="bg-indigo-600 text-white pt-16 pb-8 px-4 sm:px-6 relative overflow-hidden mt-10">
+        <footer className="bg-indigo-700 text-white pt-16 pb-8 px-4 sm:px-6 relative overflow-hidden mt-10">
             {/* Decorative blobs - more subtle and modern */}
             <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl"></div>
             <div className="absolute -bottom-40 left-0 w-72 h-72 rounded-full bg-indigo-500/10 blur-3xl"></div>

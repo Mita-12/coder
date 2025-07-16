@@ -2,7 +2,7 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Signup from './pages/Signup';
-import Login from './pages/Login';
+import Login from './components/Login';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
@@ -33,10 +33,6 @@ function MainContent() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/activity" element={<Activity />} />
         <Route path="/alluser" element={<AllUsers />} />
-
-
-
-        {/* Add your other routes here */}
       </Routes>
 
       {shouldShowFooter && <Footer />}
