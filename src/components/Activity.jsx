@@ -1,16 +1,6 @@
 import React, { useState } from "react";
 import {
-  FiCalendar,
-  FiDollarSign,
-  FiUsers,
-  FiRefreshCw,
-  FiChevronDown,
-  FiChevronRight,
-  FiDownload,
-  FiFilter,
-  FiSearch,
-  FiEye,
-  FiMoreVertical
+  FiDownload
 } from "react-icons/fi";
 
 const activities = [
@@ -86,9 +76,6 @@ const activities = [
   },
 ];
 
-const statusOptions = ["All", "Completed", "Pending"];
-const typeOptions = ["All", "Signup", "Purchase", "Upgrade", "Referral", "Renewal"];
-
 const getStatusBadge = (status) => {
   switch (status) {
     case "completed":
@@ -150,97 +137,6 @@ const Activity = () => {
               </button>
             </div>
           </div>
-
-          {/* Filters and Search */}
-          <div className="mt-6 flex flex-col md:flex-row gap-4">
-            <div className="relative flex-grow">
-              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <FiSearch className="text-gray-400" />
-              </div>
-              <input
-                type="text"
-                placeholder="Search referrals..."
-                className="pl-10 pr-4 py-2 w-full border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
-            
-            <div className="flex flex-wrap gap-2">
-              <div className="relative">
-                <select
-                  className="appearance-none pl-3 pr-8 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-sm"
-                  value={selectedStatus}
-                  onChange={(e) => setSelectedStatus(e.target.value)}
-                >
-                  {statusOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
-                  ))}
-                </select>
-                <FiChevronDown className="absolute right-3 top-2.5 text-gray-400" />
-              </div>
-              
-              <div className="relative">
-                <select
-                  className="appearance-none pl-3 pr-8 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-sm"
-                  value={selectedType}
-                  onChange={(e) => setSelectedType(e.target.value)}
-                >
-                  {typeOptions.map(option => (
-                    <option key={option} value={option}>{option}</option>
-                  ))}
-                </select>
-                <FiChevronDown className="absolute right-3 top-2.5 text-gray-400" />
-              </div>
-              
-              <button className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 flex items-center transition-all hover:shadow-xs">
-                <FiCalendar className="mr-2" />
-                Date Range
-              </button>
-            </div>
-          </div>
-
-          {/* Summary Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-100 shadow-xs">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-blue-600">Total Referrals</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">24</p>
-                  <p className="text-xs text-blue-500 mt-1">+12% from last month</p>
-                </div>
-                <div className="p-3 rounded-full bg-white text-blue-600 shadow-xs">
-                  <FiUsers className="w-5 h-5" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-100 shadow-xs">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-green-600">Total Earnings</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">$137.50</p>
-                  <p className="text-xs text-green-500 mt-1">+$27.50 this month</p>
-                </div>
-                <div className="p-3 rounded-full bg-white text-green-600 shadow-xs">
-                  <FiDollarSign className="w-5 h-5" />
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-4 rounded-xl border border-amber-100 shadow-xs">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-amber-600">Pending Earnings</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1">$25.00</p>
-                  <p className="text-xs text-amber-500 mt-1">2 pending conversions</p>
-                </div>
-                <div className="p-3 rounded-full bg-white text-amber-600 shadow-xs">
-                  <FiRefreshCw className="w-5 h-5" />
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Table View */}
@@ -253,7 +149,6 @@ const Activity = () => {
                 <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Date</th>
                 <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Status</th>
                 <th className="px-6 py-3 text-left font-medium text-gray-500 uppercase tracking-wider">Earnings</th>
-                <th className="px-6 py-3 text-right font-medium text-gray-500 uppercase tracking-wider">Action</th>
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
@@ -294,18 +189,10 @@ const Activity = () => {
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       {item.earnings}
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <button className="text-blue-600 hover:text-blue-900 mr-3">
-                        <FiEye className="w-4 h-4" />
-                      </button>
-                      <button className="text-gray-400 hover:text-gray-600">
-                        <FiMoreVertical className="w-4 h-4" />
-                      </button>
-                    </td>
                   </tr>
                   {expandedRow === item.id && (
                     <tr className="bg-blue-50">
-                      <td colSpan="6" className="px-6 py-4">
+                      <td colSpan="5" className="px-6 py-4">
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                           <div>
                             <h4 className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Referral Details</h4>
@@ -342,7 +229,7 @@ const Activity = () => {
               ))}
             </tbody>
           </table>
-          
+
           {paginatedActivities.length === 0 && (
             <div className="text-center py-12">
               <div className="text-gray-400 mb-4">No matching referrals found</div>
@@ -375,7 +262,6 @@ const Activity = () => {
             >
               Previous
             </button>
-            
             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
               let pageNum;
               if (totalPages <= 5) {
@@ -387,7 +273,7 @@ const Activity = () => {
               } else {
                 pageNum = currentPage - 2 + i;
               }
-              
+
               return (
                 <button
                   key={pageNum}
@@ -402,20 +288,17 @@ const Activity = () => {
                 </button>
               );
             })}
-            
             {totalPages > 5 && currentPage < totalPages - 2 && (
-              <span className="px-2 text-gray-500">...</span>
+              <>
+                <span className="px-2 text-gray-500">...</span>
+                <button
+                  className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 transition"
+                  onClick={() => handlePageChange(totalPages)}
+                >
+                  {totalPages}
+                </button>
+              </>
             )}
-            
-            {totalPages > 5 && currentPage < totalPages - 2 && (
-              <button
-                className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 transition"
-                onClick={() => handlePageChange(totalPages)}
-              >
-                {totalPages}
-              </button>
-            )}
-            
             <button 
               className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentPage === totalPages}

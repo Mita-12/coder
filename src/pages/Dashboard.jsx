@@ -102,7 +102,7 @@ const Dashboard = () => {
 
 
               {/* Metrics Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left">
                 {/* Clicks Card */}
                 <div className="bg-white p-5 rounded-xl border border-gray-300 shadow-sm hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
@@ -143,7 +143,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                {/* Paid Signups Card */}
+                {/* Paid Signups Card
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-gray-800 font-medium">Paid Signups</span>
@@ -161,7 +161,7 @@ const Dashboard = () => {
                     </span>
                     <span className="ml-2 text-xs text-gray-500">vs last period</span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Conversion Rate Card */}
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
@@ -223,7 +223,7 @@ const Dashboard = () => {
                   </div>
                 </div>
 
-                {/* Paid Commissions Card */}
+                {/* Paid Commissions Card
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-gray-800 font-medium">Paid Commissions</span>
@@ -241,7 +241,7 @@ const Dashboard = () => {
                     </span>
                     <span className="ml-2 text-xs text-gray-500">vs last period</span>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Earnings Per Click Card */}
                 <div className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all">
