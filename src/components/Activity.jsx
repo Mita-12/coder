@@ -100,13 +100,13 @@ const Activity = () => {
   };
 
   const filteredActivities = activities.filter(activity => {
-    const matchesSearch = activity.referralName.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                         activity.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         activity.activity.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = selectedStatus === "All" || 
-                         activity.status.toLowerCase() === selectedStatus.toLowerCase();
-    const matchesType = selectedType === "All" || 
-                       activity.type.toLowerCase() === selectedType.toLowerCase();
+    const matchesSearch = activity.referralName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      activity.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      activity.activity.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesStatus = selectedStatus === "All" ||
+      activity.status.toLowerCase() === selectedStatus.toLowerCase();
+    const matchesType = selectedType === "All" ||
+      activity.type.toLowerCase() === selectedType.toLowerCase();
     return matchesSearch && matchesStatus && matchesType;
   });
 
@@ -154,8 +154,8 @@ const Activity = () => {
             <tbody className="bg-white divide-y divide-gray-200">
               {paginatedActivities.map((item) => (
                 <React.Fragment key={item.id}>
-                  <tr 
-                    className="hover:bg-gray-50 transition cursor-pointer" 
+                  <tr
+                    className="hover:bg-gray-50 transition cursor-pointer"
                     onClick={() => toggleRow(item.id)}
                   >
                     <td className="px-6 py-4 whitespace-nowrap">
@@ -233,7 +233,7 @@ const Activity = () => {
           {paginatedActivities.length === 0 && (
             <div className="text-center py-12">
               <div className="text-gray-400 mb-4">No matching referrals found</div>
-              <button 
+              <button
                 className="text-blue-600 hover:text-blue-800 text-sm font-medium"
                 onClick={() => {
                   setSearchTerm("");
@@ -255,7 +255,7 @@ const Activity = () => {
             </span> of <span className="font-medium">{filteredActivities.length}</span> results
           </p>
           <div className="flex items-center space-x-2">
-            <button 
+            <button
               className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentPage === 1}
               onClick={() => handlePageChange(currentPage - 1)}
@@ -277,11 +277,10 @@ const Activity = () => {
               return (
                 <button
                   key={pageNum}
-                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition ${
-                    currentPage === pageNum
-                      ? 'bg-blue-600 text-white'
-                      : 'text-gray-700 hover:bg-gray-50 border border-gray-200'
-                  }`}
+                  className={`px-3 py-1.5 text-sm font-medium rounded-lg transition ${currentPage === pageNum
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-700 hover:bg-gray-50 border border-gray-200'
+                    }`}
                   onClick={() => handlePageChange(pageNum)}
                 >
                   {pageNum}
@@ -299,7 +298,7 @@ const Activity = () => {
                 </button>
               </>
             )}
-            <button 
+            <button
               className="px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-gray-50 rounded-lg border border-gray-200 transition disabled:opacity-50 disabled:cursor-not-allowed"
               disabled={currentPage === totalPages}
               onClick={() => handlePageChange(currentPage + 1)}
