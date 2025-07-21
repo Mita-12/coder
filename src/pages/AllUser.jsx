@@ -7,7 +7,6 @@ const AllUsers = () => {
     {
       id: 1,
       name: 'John Doe',
-      email: 'john@example.com',
       usageType: 'CUI/UX Templates',
       referrals: 42,
       earnings: 125.50
@@ -15,7 +14,6 @@ const AllUsers = () => {
     {
       id: 2,
       name: 'Jane Smith',
-      email: 'jane@example.com',
       usageType: 'Code Libraries',
       referrals: 28,
       earnings: 84.00
@@ -23,7 +21,6 @@ const AllUsers = () => {
     {
       id: 3,
       name: 'Alex Johnson',
-      email: 'alex@example.com',
       usageType: 'Premium Subscriptions',
       referrals: 15,
       earnings: 45.25
@@ -31,7 +28,6 @@ const AllUsers = () => {
     {
       id: 4,
       name: 'Sarah Williams',
-      email: 'sarah@example.com',
       usageType: 'Domain Services',
       referrals: 36,
       earnings: 108.75
@@ -39,12 +35,14 @@ const AllUsers = () => {
     {
       id: 5,
       name: 'Michael Brown',
-      email: 'michael@example.com',
       usageType: 'Ads Campaigns',
       referrals: 7,
       earnings: 21.00
     },
   ];
+
+  // Calculate total earnings
+  const totalEarnings = users.reduce((sum, user) => sum + user.earnings, 0);
 
   // Usage type colors mapping
   const usageTypeColors = {
@@ -85,7 +83,7 @@ const AllUsers = () => {
                         Usage Type
                       </th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        EarnCode
+                        Purchase Code
                       </th>
                       <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Earnings
@@ -96,49 +94,52 @@ const AllUsers = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {users.map((user) => (
-                      <tr key={user.id} className="hover:bg-gray-50 transition-colors">
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
-                              <span className="text-indigo-600 font-medium">
-                                {user.name.split(' ').map(n => n[0]).join('')}
-                              </span>
+                    {users.map((user) => {
+                      const percentage = (user.earnings / totalEarnings * 100).toFixed(1);
+                      return (
+                        <tr key={user.id} className="hover:bg-gray-50 transition-colors">
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <div className="flex-shrink-0 h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
+                                <span className="text-indigo-600 font-medium">
+                                  {user.name.split(' ').map(n => n[0]).join('')}
+                                </span>
+                              </div>
+                              <div className="ml-4">
+                                <div className="text-sm font-medium text-gray-900">{user.name}</div>
+                              </div>
                             </div>
-                            <div className="ml-4">
-                              <div className="text-sm font-medium text-gray-900">{user.name}</div>
-                              <div className="text-sm text-gray-500">{user.email}</div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <span className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${usageTypeColors[user.usageType]}`}>
+                              {user.usageType}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="flex items-center">
+                              <div className="w-12 bg-gray-200 rounded-full h-2 mr-2">
+                                <div
+                                  className="bg-indigo-600 h-2 rounded-full"
+                                  style={{ width: `${Math.min(100, (user.referrals / 50) * 100)}%` }}
+                                ></div>
+                              </div>
+                              <span className="text-sm font-medium">{user.referrals}</span>
                             </div>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${usageTypeColors[user.usageType]}`}>
-                            {user.usageType}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="flex items-center">
-                            <div className="w-12 bg-gray-200 rounded-full h-2 mr-2">
-                              <div 
-                                className="bg-indigo-600 h-2 rounded-full" 
-                                style={{ width: `${Math.min(100, (user.referrals / 50) * 100)}%` }}
-                              ></div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="flex flex-col">
+                              <span className="text-green-600 font-bold">${user.earnings.toFixed(2)}</span>
+                              <span className="text-xs text-gray-500 mt-1">{percentage}% of total</span>
                             </div>
-                            <span className="text-sm font-medium">{user.referrals}</span>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className="text-green-600 font-bold">${user.earnings.toFixed(2)}</span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            user.earnings > 75 ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'
-                          }`}>
-                            {user.earnings > 75 ? 'Active' : 'Developing'}
-                          </span>
-                        </td>
-                      </tr>
-                    ))}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <span className="px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                              Active
+                            </span>
+                          </td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -157,7 +158,7 @@ const AllUsers = () => {
                   </div>
                   <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">Total Earnings</h3>
-                    <p className="text-2xl font-bold text-indigo-600">$384.50</p>
+                    <p className="text-2xl font-bold text-indigo-600">${totalEarnings.toFixed(2)}</p>
                     <p className="text-sm text-gray-500">Paid to affiliates</p>
                   </div>
                 </div>

@@ -55,7 +55,7 @@ const Sidebar = () => {
             </div>
           </NavLink>
         </div>
-        
+
         <div className="flex flex-col justify-between h-[calc(100%-6rem)]">
           {/* Navigation */}
           <nav className="flex-1 border-blue-600/30">
@@ -65,8 +65,7 @@ const Sidebar = () => {
                   <NavLink
                     to={item.to}
                     className={({ isActive }) =>
-                      `flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-all ${
-                        isActive ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100 text-gray-700'
+                      `flex items-center gap-3 px-3 py-2 text-sm rounded-lg transition-all ${isActive ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100 text-gray-700'
                       }`
                     }
                     onClick={toggleSidebar}
@@ -86,8 +85,7 @@ const Sidebar = () => {
             <NavLink
               to="/help"
               className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 text-lg rounded-lg transition-all ${
-                  isActive ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100 text-gray-700'
+                `flex items-center gap-3 px-3 py-2 text-lg rounded-lg transition-all ${isActive ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-gray-100 text-gray-700'
                 }`
               }
               onClick={toggleSidebar}
