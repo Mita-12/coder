@@ -13,7 +13,7 @@ import { FiArrowRight } from 'react-icons/fi';
 
 const Footer = () => {
     return (
-        <footer className="bg-indigo-700 text-white pt-16 pb-8 px-4 sm:px-6 relative overflow-hidden mt-10">
+        <footer className="bg-blue-900 text-white pt-16 pb-8 px-4 sm:px-6 relative overflow-hidden mt-10">
             {/* Decorative blobs - more subtle and modern */}
             <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl"></div>
             <div className="absolute -bottom-40 left-0 w-72 h-72 rounded-full bg-indigo-500/10 blur-3xl"></div>
@@ -26,8 +26,7 @@ const Footer = () => {
                         <Link to="/" className="inline-block transition-transform hover:scale-105 duration-300">
                             <div className="flex items-center">
                                 <FaCode className="h-8 w-8 text-cyan-400 mr-2" />
-                                <h2 className="text-3xl font-bold text-white">                                Codder Affiliate
-
+                                <h2 className="text-3xl font-bold text-white">                                AffiliatePartner
                                 </h2>
                             </div>
                         </Link>
@@ -148,20 +147,20 @@ const Footer = () => {
 
                 {/* Bottom Bar - Cleaner styling */}
                 <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-gray-500 text-sm order-2 md:order-1">
+                    <p className="text-white text-sm order-2 md:order-1">
                         © {new Date().getFullYear()} Coder. All rights reserved.
                     </p>
                     <div className="flex flex-wrap justify-center gap-6 order-1 md:order-2">
-                        <Link to="/terms" className="text-gray-500 hover:text-cyan-400 text-sm transition-colors">
+                        <Link to="/terms" className="text-white hover:text-cyan-400 text-sm transition-colors">
                             Terms of Service
                         </Link>
-                        <Link to="/privacy" className="text-gray-500 hover:text-cyan-400 text-sm transition-colors">
+                        <Link to="/privacy" className="text-white hover:text-cyan-400 text-sm transition-colors">
                             Privacy Policy
                         </Link>
-                        <Link to="/security" className="text-gray-500 hover:text-cyan-400 text-sm transition-colors">
+                        <Link to="/security" className="text-white hover:text-cyan-400 text-sm transition-colors">
                             Security
                         </Link>
-                        <Link to="/cookies" className="text-gray-500 hover:text-cyan-400 text-sm transition-colors">
+                        <Link to="/cookies" className="text-white hover:text-cyan-400 text-sm transition-colors">
                             Cookies
                         </Link>
                     </div>

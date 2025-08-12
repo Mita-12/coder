@@ -18,7 +18,7 @@ import { TbCalculator } from "react-icons/tb";
 import { PiMoneyDuotone } from "react-icons/pi";
 import { FiMenu } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import Sidebar from '../components/Sidebar';
+import Sidebar from '../../components/Sidebar';
 
 // Reusable components
 const DashboardNavbar = () => {
@@ -369,7 +369,7 @@ const WalletPage = () => {
     <div className="flex w-full bg-slate-100">
       <Sidebar />
 
-      <div className="ml-64 min-h-screen text-sm text-gray-800 w-full">
+      <div className="ml-55 min-h-screen text-sm text-gray-800 w-full">
         <DashboardNavbar />
 
         {/* Success Notification */}
@@ -395,24 +395,7 @@ const WalletPage = () => {
           </div>
 
           {/* Wallet Summary Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-            {/* Total Balance */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-100 shadow-sm hover:shadow-md transition-all">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-sm font-medium text-blue-800">Total Balance</p>
-                  <p className="text-2xl font-bold mt-1 text-gray-800">{formatCurrency(walletData.balance)}</p>
-                </div>
-                <div className="p-3 rounded-lg bg-blue-100/50 text-blue-600">
-                  <FaWallet className="text-xl" />
-                </div>
-              </div>
-              <div className="mt-4 flex items-center text-sm text-blue-700">
-                <FiArrowUpRight className="mr-1" />
-                <span>{formatCurrency(walletData.added)} added this month</span>
-              </div>
-            </div>
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
             {/* Total Earnings */}
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-100 shadow-sm hover:shadow-md transition-all">
               <div className="flex justify-between items-start">
@@ -478,32 +461,6 @@ const WalletPage = () => {
               </div>
             </div>
 
-            {/* Quick Actions */}
-            <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-100 shadow-sm hover:shadow-md transition-all">
-              <div className="flex justify-between items-start">
-                <div>
-                  <p className="text-sm font-medium text-purple-800">Quick Actions</p>
-                  <p className="text-lg font-semibold mt-1 text-gray-800">Manage Funds</p>
-                </div>
-                <div className="p-3 rounded-lg bg-purple-100/50 text-purple-600">
-                  <FiCreditCard className="text-xl" />
-                </div>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-2">
-                <button
-                  onClick={() => document.getElementById('add-money-form').scrollIntoView({ behavior: 'smooth' })}
-                  className="px-3 py-1.5 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-1 shadow-sm"
-                >
-                  <FaPlusCircle className="text-sm" /> Add
-                </button>
-                <button
-                  onClick={() => document.getElementById('withdraw-form').scrollIntoView({ behavior: 'smooth' })}
-                  className="px-3 py-1.5 bg-amber-500 text-white text-sm rounded-lg hover:bg-amber-600 transition-colors flex items-center justify-center gap-1 shadow-sm"
-                >
-                  <FaArrowDown className="text-sm" /> Withdraw
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Action Forms Section */}
